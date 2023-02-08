@@ -25,9 +25,9 @@ public class Voiture extends JPanel{
         data=new Data("Config",utilisateur.getNom());
         climatisation=new Data("Climatisation",utilisateur.getNom());
         distance=data.getInt("chaise_distance");
-        distanceFinal=0;
+        distanceFinal=distance;
         hauteur=data.getInt("volant_hauteur");
-        hauteurFinal=0;
+        hauteurFinal=hauteur;
     }
 
     @Override
@@ -40,13 +40,14 @@ public class Voiture extends JPanel{
         g.drawString("Distance de "+distance+"cm du volant", 20, 50);
 
         //volant
-        g.setColor(Color.BLACK);
-        g.fillRect(0, 200-hauteur,20, 1000);
+        g.setColor(Color.DARK_GRAY);
+        g.fillRect(0, 200-hauteur,20, 100);
 
 
         
 
         //chaise
+        g.setColor(Color.BLACK);
         g.fillRect(150+(distance), 100, 40, 1000);
         g.fillRect(50+(distance), 260, 120, 60);
 
